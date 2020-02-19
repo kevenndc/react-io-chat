@@ -24,10 +24,10 @@ export default class LoginScreen extends React.Component {
 
   render() {
     return (
-      <div>
-        <form id="userFormArea" onSubmit={this.handleSubmit}>
-          <input id="userInput" placeholder="Nome de usuário" onChange={this.handleChange} />
-          <input type="submit" value="Entrar" id="userFormSubmit" />
+      <div className="login-screen-wrapper">
+        <form className="user-form" onSubmit={this.handleSubmit}>
+          <input className="user-input" placeholder="Nome de usuário" onChange={this.handleChange} />
+          <input type="submit" value="Entrar" className="user-form-submit-btn" />
         </form>
       </div>
     )

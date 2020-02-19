@@ -7,7 +7,102 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+body, html {
+  height: 100%;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+#root {
+  height: 100%;
+}
+
+.login-screen-wrapper {
+  background: #404e5c;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-form {
+  padding: 25px;
+  background: rgba(0, 0, 0, .4);
+  border-radius: 3px;
+}
+
+.user-input {
+  padding: 15px;
+  border: none;
+  font-size: 18px;
+  color: #666;
+  border-radius: 3px;
+}
+
+.user-form-submit-btn {
+  padding: 15px;
+  margin-left: 5px;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  background: #624bb8;
+  color: #fff;
+  border-radius: 3px;
+  transition: all .2s ease-in-out;
+}
+
+.user-form-submit-btn:hover {
+  background: #544394;
+}
+
+/* CHAT SCREEN */
+
+.chat-screen-wrapper {
+  display: flex;
+  height: 100%;
+}
+
+.online-users-col {
+  flex: 0 0 30%;
+  background: #404e5c;
+}
+
+.online-users-header {
+  color: #fff;
+  padding: 10px 20px;
+}
+
+.user-item {
+  padding: 20px;
+  color: #fff;
+  background: #624bb8;
+  margin: 5px 0;
+}
+
+.chat-message-area-wrapper {
+  background: #4c5e70;
+  flex: 0 0 70%;
+}
+
+.message-area {
+  height: 90%;
+  overflow-y: scroll;
+}
+
+.message-input {
+  height: 100%;
+  width: 100%;
+  border: none;
+  box-sizing: border-box;
+}
+
+.message-form {
+  height: 10%;
+}
+
+.msg-username {
+  font-weight: bold;
 }
