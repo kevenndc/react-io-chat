@@ -11,7 +11,7 @@ export default class ChatScreen extends React.Component {
     return (
       <div className="chat-screen-wrapper">
         <OnlineUsers users={this.props.onlineUsers} />
-        <Chat />
+        <Chat user={this.props.user} />
       </div>
     )
   }

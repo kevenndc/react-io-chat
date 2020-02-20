@@ -66,7 +66,8 @@ code {
 }
 
 .online-users-col {
-  flex: 0 0 30%;
+  width: 100%;
+  max-width: 300px;
   background: #404e5c;
 }
 
@@ -84,25 +85,53 @@ code {
 
 .chat-message-area-wrapper {
   background: #4c5e70;
-  flex: 0 0 70%;
+  width: 100%;
+  position: relative;
 }
 
 .message-area {
   height: 90%;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .message-input {
-  height: 100%;
-  width: 100%;
+  height: 35px;
+  width: 90%;
   border: none;
   box-sizing: border-box;
+  background: #1d242b;
+  color: #dcddde;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 1em;
 }
 
 .message-form {
-  height: 10%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background: #29333d;
 }
 
 .msg-username {
   font-weight: bold;
+}
+
+.emoji-mart {
+  position: absolute;
+  bottom: 70px;
+  left: 0;
+}
+
+.emoji-btn {
+  cursor: pointer;
+}
+
+.message-input-wrapper {
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  max-height: 70px;
 }

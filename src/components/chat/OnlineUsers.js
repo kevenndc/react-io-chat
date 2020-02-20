@@ -8,7 +8,7 @@ export default class OnlineUsers extends React.Component {
 
   listUsers() {
     const usersComponents = this.props.users.map(user => {
-      return <User name={user} />
+      return <User key={user} name={user} />
     })
 
     return usersComponents

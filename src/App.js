@@ -1,8 +1,8 @@
 import React from 'react'
 import logo from './logo.svg'
 import './App.css';
-import LoginScreen from './components/LoginScreen'
-import ChatScreen from './components/ChatScreen'
+import LoginScreen from './components/login/LoginScreen'
+import ChatScreen from './components//chat/ChatScreen'
 import {socket, userLoggedIn} from './api'
 
 
@@ -38,7 +38,7 @@ class App extends React.Component {
   render() {
     return ( 
       this.state.isLogged ?
-      <ChatScreen onlineUsers={this.state.onlineUsers} /> :
+      <ChatScreen onlineUsers={this.state.onlineUsers} user={this.state.user} /> :
       <LoginScreen onSubmit={this.handleUserFormSubmit} />
     )
   }
