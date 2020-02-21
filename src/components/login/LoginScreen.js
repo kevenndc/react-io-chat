@@ -37,7 +37,8 @@ export default class LoginScreen extends React.Component {
           <input 
             type="submit" 
             value="Entrar" 
-            className="user-form-submit-btn" />
+            className="user-form-submit-btn" 
+          />
         </form>
       </div>
     )

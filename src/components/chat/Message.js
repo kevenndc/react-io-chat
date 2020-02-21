@@ -26,11 +26,11 @@ export default class Message extends React.Component {
   render() {
     return (
       <div className="message-box" id={(this.state.clientUserMsg && "c-msg")}>
-        <p>
-          {!this.state.clientUserMsg && (<span className="msg-username">{this.state.user}</span>)}
-          {this.state.content}
+        <div className="message-content">
+          <p>{!this.state.clientUserMsg && (<span className="msg-username">{this.state.user}</span>)}
+          {this.state.content}</p>
           <span class="msg-time">{`${this.state.hour}:${this.state.minutes}`}</span>
-        </p>
+        </div>
       </div>
     )
   }

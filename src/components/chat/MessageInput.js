@@ -77,6 +77,7 @@ export default class MessageInput extends React.Component {
                 set='google'
                 darkMode={true}
                 onSelect={this.addEmoji}
+                title="IO Chat"
               />
             )}
         </div>
@@ -88,7 +89,7 @@ export default class MessageInput extends React.Component {
             type="text" 
             className="message-input" 
             value={this.state.message} 
-            onChange={this.handleChange} 
+            onChange={this.handleChange}
           />
         </form>
       </div>

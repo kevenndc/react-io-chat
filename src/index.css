@@ -145,8 +145,8 @@ code {
   padding-right: 9%;
 }
 
-.message-box p {
-  background: blue;
+.message-box .message-content  {
+  background: #29333d;
   padding: 8px 10px;
   display: inline-block;
   margin: 5px 0;
@@ -156,19 +156,29 @@ code {
   border-radius: 3px;
   text-align: left;
   position: relative;
+  color: #fff;
+}
+
+.message-box .message-content p {
+  display: inline-block;
+  max-width: calc(100% - 50px);
+  margin: 0;
 }
 
 .msg-time {
   font-size: 10px;
   position: relative;
-  bottom: -12px;
+  bottom: -5px;
   display: inline-block;
   width: 50px;
   text-align: right;
-  float: right;
   cursor: default;
 }
 
 #c-msg {
   text-align: right;
+}
+
+#c-msg .message-content {
+  background: #624bb8;
 }
