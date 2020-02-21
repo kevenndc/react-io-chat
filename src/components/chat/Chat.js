@@ -28,10 +28,13 @@ export default class Chat extends React.Component {
               clientUserMsg={false} 
               key={Date.now()} 
               data={data} 
+              time={Date.now()}
             />
           ]
         })
       }
+
+      this.scrollBottom()
     })
   }
 
@@ -46,11 +49,17 @@ export default class Chat extends React.Component {
           clientUserMsg={true} 
           key={Date.now()} 
           data={{msg : message, user : this.props.user}} 
+          time={Date.now()}
         />
       ]
     })
 
     socket.emit('new message', message)
+  }
+
+  scrollBottom() {
+    let $messageArea = document.querySelector('.message-area')
+    $messageArea.scrollTop = $messageArea.scrollHeight
   }
 
   render() {

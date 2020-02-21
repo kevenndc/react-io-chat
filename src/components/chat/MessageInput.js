@@ -26,6 +26,7 @@ export default class MessageInput extends React.Component {
   }
 
   handleChange(e) {
+    if(this.state.message === '' && e.target.value === ' ') return
     this.setState({
       message : e.target.value
     })
@@ -33,6 +34,7 @@ export default class MessageInput extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
+    if (this.state.message === '') return
     this.props.onSubmit(this.state.message)
     this.setState({
       message: ''

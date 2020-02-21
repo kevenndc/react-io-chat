@@ -12,6 +12,7 @@ export default class LoginScreen extends React.Component {
   }
 
   handleChange(e) {
+    if(this.state.username === '' && e.target.value === ' ') return
     this.setState({
       username : e.target.value
     })
@@ -19,6 +20,7 @@ export default class LoginScreen extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
+    if (this.state.username === '') return
     this.props.onSubmit(this.state.username)
   }
 
@@ -26,8 +28,16 @@ export default class LoginScreen extends React.Component {
     return (
       <div className="login-screen-wrapper">
         <form className="user-form" onSubmit={this.handleSubmit}>
-          <input className="user-input" placeholder="Nome de usuário" onChange={this.handleChange} />
-          <input type="submit" value="Entrar" className="user-form-submit-btn" />
+          <input 
+            className="user-input" 
+            placeholder="Nome de usuário" 
+            value={this.state.username} 
+            onChange={this.handleChange} 
+          />
+          <input 
+            type="submit" 
+            value="Entrar" 
+            className="user-form-submit-btn" />
         </form>
       </div>
     )

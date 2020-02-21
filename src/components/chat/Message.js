@@ -6,7 +6,9 @@ export default class Message extends React.Component {
     this.state = {
       content: '',
       user: '',
-      clientUserMsg : false
+      clientUserMsg : false,
+      hour : '',
+      minutes : ''
     }
   }
 
@@ -14,7 +16,9 @@ export default class Message extends React.Component {
     this.setState({
       content: this.props.data.msg,
       user: this.props.data.user,
-      clientUserMsg: this.props.clientUserMsg
+      clientUserMsg: this.props.clientUserMsg,
+      hour : new Date(this.props.time).getHours(),
+      minutes : new Date(this.props.time).getMinutes()
     })
   }
 
@@ -25,6 +29,7 @@ export default class Message extends React.Component {
         <p>
           {!this.state.clientUserMsg && (<span className="msg-username">{this.state.user}</span>)}
           {this.state.content}
+          <span class="msg-time">{`${this.state.hour}:${this.state.minutes}`}</span>
         </p>
       </div>
     )
