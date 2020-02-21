@@ -90,8 +90,11 @@ code {
 }
 
 .message-area {
-  height: 90%;
+  height: calc(100% - 70px);
   overflow-y: auto;
+  padding-bottom: 10px;
+  padding-top: 20px;
+  box-sizing: border-box;
 }
 
 .message-input {
@@ -116,6 +119,7 @@ code {
 
 .msg-username {
   font-weight: bold;
+  display: block;
 }
 
 .emoji-mart {
@@ -134,4 +138,26 @@ code {
   bottom: 0;
   width: 100%;
   max-height: 70px;
+}
+
+.message-box  {
+  padding-left: 9%;
+  padding-right: 9%;
+}
+
+.message-box p {
+  background: blue;
+  padding: 5px 10px;
+  display: inline-block;
+  margin: 5px 0;
+  word-break: break-all;
+  -ms-word-break: break-all;
+  max-width: 60%;
+  border-radius: 3px;
+  text-align: left;
+}
+
+#c-msg {
+  text-align: right;
+  
 }

@@ -3,9 +3,6 @@ import OnlineUsers from './OnlineUsers'
 import Chat from './Chat'
 
 export default class ChatScreen extends React.Component {
-  constructor() {
-    super()
-  }
 
   render() {
     return (

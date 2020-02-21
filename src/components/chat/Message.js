@@ -1,5 +1,4 @@
 import React from 'react'
-import {socket} from '../../api'
 
 export default class Message extends React.Component {
   constructor() {
@@ -19,10 +18,14 @@ export default class Message extends React.Component {
     })
   }
 
+  // the class 'c-msg' displays the message that the user sent differently from the messages received from other messages
   render() {
     return (
-      <div className={"message-box" + (this.state.clientUserMsg ? " client-msg" : '')}>
-        <p><span className="msg-username">{this.state.user}</span>: {this.state.content}</p>
+      <div className="message-box" id={(this.state.clientUserMsg && "c-msg")}>
+        <p>
+          {!this.state.clientUserMsg && (<span className="msg-username">{this.state.user}</span>)}
+          {this.state.content}
+        </p>
       </div>
     )
   }

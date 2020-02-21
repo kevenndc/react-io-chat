@@ -14,21 +14,40 @@ export default class Chat extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
+/**
+ * the 'if' statemant ensures that if the message received from server is the same that the client user
+ *  sent it won't show twice by comparing the 'user' using the socket and the user that sent the message
+/*/
   componentDidMount() {
     socket.on('update messages', data => {
-      if (data.user != this.props.user) {
+      if (data.user !== this.props.user) {
         this.setState({
-          messages : [...this.state.messages, <Message clientUserMsg={false} key={Date.now()} data={data} />]
+          messages : [
+            ...this.state.messages, 
+            <Message 
+              clientUserMsg={false} 
+              key={Date.now()} 
+              data={data} 
+            />
+          ]
         })
       }
     })
   }
 
+  // immediately renders the the message the user is sending in his client view and then send it to the server and other users
   handleSubmit(message) {
     console.log(message)
     console.log(this.props.user)
     this.setState({
-      messages : [...this.state.messages, <Message clientUserMsg={true} key={Date.now()} data={{msg : message, user : this.props.user}} />]
+      messages : [
+        ...this.state.messages, 
+        <Message 
+          clientUserMsg={true} 
+          key={Date.now()} 
+          data={{msg : message, user : this.props.user}} 
+        />
+      ]
     })
 
     socket.emit('new message', message)

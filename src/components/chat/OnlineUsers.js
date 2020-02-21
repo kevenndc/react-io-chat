@@ -2,9 +2,6 @@ import React from 'react'
 import User from './User'
 
 export default class OnlineUsers extends React.Component {
-  constructor() {
-    super()
-  }
 
   listUsers() {
     const usersComponents = this.props.users.map(user => {

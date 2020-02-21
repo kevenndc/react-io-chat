@@ -1,6 +1,4 @@
 import React from 'react'
-import Message from './Message'
-import {socket} from '../../api'
 
 export default class MessageArea extends React.Component {
   constructor() {
@@ -10,15 +8,6 @@ export default class MessageArea extends React.Component {
     }
 
   }
-
-  // componentDidMount() {
-  //   socket.on('update messages', data => {
-  //     const updatedArray = this.state.messages.concat(<Message key={Date.now()} data={data} />)
-  //     this.setState({
-  //         messages : updatedArray
-  //     })
-  //   })
-  // }
 
   render() {
     return (
